@@ -2,6 +2,7 @@ import os
 from pathlib import Path
 from django.contrib.messages import constants as message_constants
 from decouple import config
+import django_heroku
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -29,13 +30,14 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -121,3 +123,5 @@ MESSAGE_TAGS = {
     message_constants.WARNING: 'warning',
     message_constants.ERROR: 'danger',  # Change 'error' to 'danger' for Bootstrap compatibility
 }
+
+django_heroku.settings(locals())
