@@ -15,7 +15,6 @@ psycopg2==2.9.9
 python-decouple==3.8
 python-dotenv==0.21.1
 pytz==2024.2
-pywin32==308
 requests==2.31.0
 sqlparse==0.4.4
 typing_extensions==4.7.1
