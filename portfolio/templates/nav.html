@@ -22,7 +22,7 @@
           </li>
 
 
-          <li class="dropdown"><a href="#services"><span>Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="{% url 'service_detail' %}"><span>Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               {% for cat in categories %}
               <li><a href="{{ cat.get_absolute_url }}">{{ cat.name }}</a></li>
