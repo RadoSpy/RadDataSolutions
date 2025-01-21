@@ -7,7 +7,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 SECRET_KEY = config('SECRET_KEY', default='fallback_key')
-ALLOWED_HOSTS = ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', 'raddatasolutions.com']
+ALLOWED_HOSTS = ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1', 'raddatasolutions.com']
 DATABASE_URL = config('DATABASE_URL')
 
 # Application definition
