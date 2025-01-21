@@ -1,0 +1,40 @@
+<header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="{% url 'home' %}" class="logo d-flex align-items-center me-auto me-lg-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">{{name_short}}</h1>
+        <span>.</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="{% url 'home' %}" class="active">Home<br></a></li>
+          <li><a href="{% url 'home' %}#about">What We Do</a></li>
+          <li><a href="{% url 'home' %}#features">How We Do It</a></li>
+          <li class="dropdown"><a href="{% url 'blog' %}"><span>About Us</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="{% url 'about_team' %}">The Team</a></li>
+              <li><a href="{% url 'blog' %}">Data Insights Hub</a></li>
+              <!--<li><a href="/projects">Our Projects</a></li>-->
+            </ul>
+          </li>
+
+
+          <li class="dropdown"><a href="#services"><span>Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              {% for cat in categories %}
+              <li><a href="{{ cat.get_absolute_url }}">{{ cat.name }}</a></li>
+              {% endfor %}
+            </ul>
+          </li>
+          
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="{% url 'contact_us' %}">Contact Us</a>
+
+    </div>
+  </header>
