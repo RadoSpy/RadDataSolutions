@@ -1,1 +1,1 @@
-web: gunicorn raddatatsolutions.wsgi
+web: gunicorn core.wsgi
